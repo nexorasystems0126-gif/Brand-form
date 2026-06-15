@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Systems — Photography Brand Intake</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* New Nexora premium palette */
+    --nx-graphite: #0B0D0E;
+    --nx-soft-black: #111315;
+    --nx-charcoal-panel: #181B1E;
+    --nx-warm-ivory: #F4F1EA;
+    --nx-muted-stone: #A8A29A;
+    --nx-signature-gold: #C8A96A;
+    --nx-system-green: #7CFFB2;
+    --nx-border-line: #2A2E33;
+    --nx-error: #FF4466;
+
+    /* Existing variable names remapped to new palette */
+    --nx-void:    var(--nx-graphite);
+    --nx-deep:    var(--nx-soft-black);
+    --nx-navy:    var(--nx-charcoal-panel);
+    --nx-pulse:   var(--nx-signature-gold);
+    --nx-plasma:  var(--nx-warm-ivory);
+    --nx-signal:  var(--nx-system-green);
+    --nx-ash:     var(--nx-muted-stone);
+    --nx-mist:    var(--nx-warm-ivory);
+    --nx-white:   var(--nx-warm-ivory);
+  }
+
+  body {
+    background: var(--nx-void);
+    color: var(--nx-white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #0A1628 0%, #050A14 60%, #0D1F3C 100%);
+    border-bottom: 1px solid rgba(0,212,255,0.15);
+    padding: 56px 40px 48px;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,47,255,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: 20%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .sys-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--nx-pulse);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sys-label::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: var(--nx-pulse);
+  }
+
+  .header h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(30px, 6vw, 52px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, var(--nx-white) 0%, var(--nx-pulse) 70%, var(--nx-plasma) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+
+  .header p {
+    font-size: 14px;
+    color: var(--nx-ash);
+    max-width: 500px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .header-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .h-tag {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,212,255,0.2);
+    color: var(--nx-ash);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .h-tag .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--nx-signal);
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  /* PROGRESS BAR */
+  .progress-bar {
+    height: 2px;
+    background: rgba(0,212,255,0.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--nx-pulse), var(--nx-plasma));
+    transition: width 0.4s ease;
+  }
+
+  /* FORM BODY */
+  .form-wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 40px 100px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,212,255,0.1);
+  }
+
+  .section-num {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: rgba(0,212,255,0.08);
+    border: 1px solid rgba(0,212,255,0.25);
+    color: var(--nx-pulse);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--nx-white);
+  }
+
+  .section-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--nx-ash);
+    margin-left: auto;
+  }
+
+  /* FIELDS */
+  .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .field-group.single { grid-template-columns: 1fr; }
+
+  @media (max-width: 580px) {
+    .field-group { grid-template-columns: 1fr; }
+    .form-wrap { padding: 40px 20px 80px; }
+    .header { padding: 40px 20px 36px; }
+  }
+
+  .field { display: flex; flex-direction: column; gap: 8px; }
+
+  label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--nx-mist);
+  }
+
+  label .req { color: var(--nx-pulse); margin-left: 2px; }
+
+  label .hint {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    font-weight: 300;
+    color: var(--nx-ash);
+    margin-top: 2px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--nx-deep);
+    border: 1px solid rgba(138,155,181,0.15);
+    border-radius: 6px;
+    padding: 13px 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--nx-white);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--nx-pulse);
+    box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+  }
+
+  input::placeholder, textarea::placeholder { color: rgba(138,155,181,0.4); }
+  textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A9BB5' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    cursor: pointer;
+    background-color: var(--nx-deep);
+  }
+
+  select option { background: var(--nx-deep); color: var(--nx-white); }
+
+  /* CHECKBOXES */
+  .check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 10px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--nx-deep);
+    border: 1px solid rgba(138,155,181,0.12);
+    border-radius: 6px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .check-item:hover { border-color: rgba(0,212,255,0.3); }
+
+  .check-item input[type="checkbox"] {
+    width: 15px; height: 15px;
+    accent-color: var(--nx-pulse);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .check-item label {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    color: var(--nx-mist);
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .check-item.active {
+    border-color: var(--nx-pulse);
+    background: rgba(0,212,255,0.06);
+  }
+
+  /* RADIO CARDS */
+  .radio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 10px;
+  }
+
+  .radio-item {
+    background: var(--nx-deep);
+    border: 1px solid rgba(138,155,181,0.12);
+    border-radius: 6px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    text-align: center;
+  }
+
+  .radio-item input { display: none; }
+  .radio-item:hover { border-color: rgba(0,212,255,0.3); }
+
+  .radio-item.active {
+    border-color: var(--nx-pulse);
+    background: rgba(0,212,255,0.06);
+  }
+
+  .radio-item .r-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--nx-mist);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .radio-item .r-desc {
+    font-size: 10px;
+    color: var(--nx-ash);
+    font-style: italic;
+    display: block;
+  }
+
+  .radio-item.active .r-label { color: var(--nx-pulse); }
+
+  /* UPLOAD */
+  .upload-area {
+    border: 1.5px dashed rgba(0,212,255,0.2);
+    border-radius: 8px;
+    padding: 36px;
+    text-align: center;
+    background: var(--nx-deep);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  .upload-area:hover {
+    border-color: var(--nx-pulse);
+    background: rgba(0,212,255,0.04);
+  }
+
+  .upload-area input[type="file"] {
+    position: absolute; inset: 0;
+    opacity: 0; cursor: pointer;
+    width: 100%; height: 100%;
+    border: none; padding: 0; background: none;
+  }
+
+  .upload-icon { font-size: 32px; margin-bottom: 10px; display: block; }
+
+  .upload-text {
+    font-size: 13px;
+    color: var(--nx-ash);
+  }
+
+  .upload-text strong { color: var(--nx-pulse); font-weight: 500; }
+  .upload-sub { font-size: 10px; color: rgba(138,155,181,0.5); margin-top: 6px; letter-spacing: 0.5px; }
+
+
+  .check-item input[type="checkbox"] { pointer-events: none; }
+
+  .upload-slots {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  .upload-slot {
+    border: 1px solid rgba(200,169,106,0.18);
+    background: rgba(255,255,255,0.025);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--nx-ash);
+    font-size: 12px;
+  }
+
+  .upload-slot input[type="file"] {
+    position: static;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    color: var(--nx-ash);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  /* DIVIDER */
+  hr {
+    border: none;
+    border-top: 1px solid rgba(0,212,255,0.08);
+    margin: 48px 0;
+  }
+
+  /* SUBMIT */
+  .submit-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .submit-btn {
+    background: linear-gradient(135deg, var(--nx-pulse), var(--nx-plasma));
+    color: var(--nx-void);
+    border: none;
+    padding: 18px 60px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: opacity 0.2s, transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.2s;
+  }
+
+  .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+  .submit-btn:hover::before { background: rgba(255,255,255,0.06); }
+  .submit-btn:active { transform: translateY(0); }
+
+  .submit-note {
+    font-size: 11px;
+    color: var(--nx-ash);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* FOOTER */
+  .form-footer {
+    background: var(--nx-deep);
+    border-top: 1px solid rgba(0,212,255,0.08);
+    text-align: center;
+    padding: 24px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(138,155,181,0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-footer span { color: var(--nx-pulse); }
+
+  /* SUCCESS */
+  .success-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--nx-void);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .success-screen.show { display: flex; }
+
+  .success-glow {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,148,0.2), transparent 70%);
+    border: 1px solid rgba(0,255,148,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0,255,148,0.2); }
+    50% { box-shadow: 0 0 0 20px rgba(0,255,148,0); }
+  }
+
+  .success-screen h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--nx-white), var(--nx-signal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .success-screen p {
+    font-size: 14px;
+    color: var(--nx-ash);
+    max-width: 380px;
+    line-height: 1.8;
+  }
+
+  .success-screen .sys-label { margin-top: 24px; justify-content: center; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="sys-label">Nexora Systems</div>
+    <h1>Photography Brand<br>Intake Form</h1>
+    <p>Complete this brief so we can build your full visual brand identity, color system, and social media growth plan.</p>
+    <div class="header-tags">
+      <div class="h-tag"><span class="dot"></span> Brand Discovery</div>
+      <div class="h-tag">Confidential</div>
+      <div class="h-tag">Est. 5 mins</div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+<noscript><p style="background:#181B1E;color:#F4F1EA;padding:16px;text-align:center">This form works best with JavaScript enabled.</p></noscript>
+
+<!-- FORM -->
+<div class="form-wrap">
+  <form id="intakeForm" name="photography-brand-intake" method="POST" data-netlify="true" netlify data-netlify-honeypot="bot-field" enctype="multipart/form-data">
+    <!-- Netlify Forms hidden fields -->
+    <input type="hidden" name="form-name" value="photography-brand-intake">
+    <p style="display:none">
+      <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+    </p>
+
+    <!-- 01 ABOUT YOU -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-title">About You</div>
+        <div class="section-sub">Basic Info</div>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" name="full_name" placeholder="e.g. Amara Osei" required>
+        </div>
+        <div class="field">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="+234 000 000 0000">
+        </div>
+        <div class="field">
+          <label>City & Country <span class="req">*</span></label>
+          <input type="text" name="location" placeholder="e.g. Lagos, Nigeria" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 YOUR BRAND -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <div class="section-title">Your Brand</div>
+        <div class="section-sub">Identity</div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Photography Business Name <span class="req">*</span>
+            <span class="hint">No name yet? Write "Need help choosing"</span>
+          </label>
+          <input type="text" name="brand_name" placeholder="e.g. Lightform Studio" required>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Photography Specialty <span class="req">*</span>
+            <span class="hint">Select all that apply</span>
+          </label>
+          <div class="check-grid">
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Weddings"><label>💍 Weddings</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Portraits"><label>🎭 Portraits</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Lifestyle"><label>✨ Lifestyle</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Fashion"><label>👗 Fashion</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Events"><label>🎉 Events</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Commercial"><label>📦 Commercial</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Family"><label>👨‍👩‍👧 Family</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="specialty" value="Boudoir"><label>🌹 Boudoir</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Who is your ideal client? <span class="req">*</span>
+            <span class="hint">Who do you most want to work with?</span>
+          </label>
+          <textarea name="ideal_client" placeholder="e.g. Engaged couples aged 25–35, modern aesthetic, mid-to-high budget..."></textarea>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>What makes you different?
+            <span class="hint">Your unique approach, personality, or style</span>
+          </label>
+          <textarea name="differentiator" placeholder="e.g. I focus on candid emotional moments rather than posed shots..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 VISUAL STYLE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <div class="section-title">Visual Style</div>
+        <div class="section-sub">Aesthetic</div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Describe your style in 3 words <span class="req">*</span></label>
+          <input type="text" name="style_words" placeholder="e.g. Soft, Timeless, Emotional" required>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Photography mood / feel <span class="req">*</span></label>
+          <div class="radio-grid">
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Bright & Airy">
+              <span class="r-label">Bright & Airy</span>
+              <span class="r-desc">Light, clean, soft whites</span>
+            </div>
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Dark & Moody">
+              <span class="r-label">Dark & Moody</span>
+              <span class="r-desc">Deep tones, dramatic shadow</span>
+            </div>
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Warm & Golden">
+              <span class="r-label">Warm & Golden</span>
+              <span class="r-desc">Sunset tones, rich warmth</span>
+            </div>
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Clean & Minimal">
+              <span class="r-label">Clean & Minimal</span>
+              <span class="r-desc">Neutral, editorial, sharp</span>
+            </div>
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Film & Vintage">
+              <span class="r-label">Film & Vintage</span>
+              <span class="r-desc">Grainy, retro, nostalgic</span>
+            </div>
+            <div class="radio-item" onclick="selectRadio(this,'mood')">
+              <input type="radio" name="mood" value="Vibrant & Bold">
+              <span class="r-label">Vibrant & Bold</span>
+              <span class="r-desc">Rich color, high energy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Colors you naturally gravitate toward
+            <span class="hint">In your wardrobe, home, or things you love visually</span>
+          </label>
+          <input type="text" name="color_pref" placeholder="e.g. Dusty rose, sage green, cream, deep burgundy...">
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Instagram pages or brands you admire visually
+            <span class="hint">Names or handles — this helps us match your taste</span>
+          </label>
+          <textarea name="visual_inspo" placeholder="e.g. @jose_villa, @kellylaceyphotography — describe what you love about them..."></textarea>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Upload 3–5 of your best photos
+            <span class="hint">We analyze your visual style and build your brand around it</span>
+          </label>
+          <div class="upload-area">
+            <span class="upload-icon">📷</span>
+            <div class="upload-text"><strong>Upload up to 5 photos</strong></div>
+            <div class="upload-sub" id="uploadStatus">Netlify supports one file per field · Keep total submission under 8MB</div>
+
+            <div class="upload-slots">
+              <div class="upload-slot">Photo 1 <input type="file" name="portfolio_photo_1" accept="image/*" onchange="handleUpload()"></div>
+              <div class="upload-slot">Photo 2 <input type="file" name="portfolio_photo_2" accept="image/*" onchange="handleUpload()"></div>
+              <div class="upload-slot">Photo 3 <input type="file" name="portfolio_photo_3" accept="image/*" onchange="handleUpload()"></div>
+              <div class="upload-slot">Photo 4 <input type="file" name="portfolio_photo_4" accept="image/*" onchange="handleUpload()"></div>
+              <div class="upload-slot">Photo 5 <input type="file" name="portfolio_photo_5" accept="image/*" onchange="handleUpload()"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 BUSINESS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <div class="section-title">Business Details</div>
+        <div class="section-sub">Growth Context</div>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label>Current stage <span class="req">*</span></label>
+          <select name="stage" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Launching fresh — no clients yet</option>
+            <option>Have 1–5 clients so far</option>
+            <option>Established — want to scale</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Price range per session
+            <span class="hint">Approximate starting price</span>
+          </label>
+          <input type="text" name="pricing" placeholder="e.g. ₦150,000 – ₦400,000">
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Platforms to focus on <span class="req">*</span></label>
+          <div class="check-grid">
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="platforms" value="Instagram"><label>📸 Instagram</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="platforms" value="TikTok"><label>🎵 TikTok</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="platforms" value="Pinterest"><label>📌 Pinterest</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="platforms" value="Facebook"><label>👥 Facebook</label></div>
+            <div class="check-item" onclick="toggleCheck(this)"><input type="checkbox" name="platforms" value="LinkedIn"><label>💼 LinkedIn</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label>Comfortable showing your face on social?</label>
+          <select name="face_social">
+            <option value="" disabled selected>Select one</option>
+            <option>Yes — I want to be the face of my brand</option>
+            <option>Sometimes — behind the scenes is fine</option>
+            <option>Prefer to stay behind the camera</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Do you have a website?</label>
+          <select name="has_website">
+            <option value="" disabled selected>Select one</option>
+            <option>No — need one built</option>
+            <option>Yes — needs redesign</option>
+            <option>Yes — just needs content</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Existing website URL <span class="hint">Leave blank if none</span></label>
+          <input type="url" name="website_url" placeholder="https://yoursite.com">
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 GOALS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <div class="section-title">Your Goals</div>
+        <div class="section-sub">Vision</div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>What does success look like in 6 months?
+            <span class="hint">Be as specific as possible — numbers, income, clients</span>
+          </label>
+          <textarea name="success_vision" placeholder="e.g. Fully booked every weekend, 2,000 Instagram followers, charging ₦500,000 per session..."></textarea>
+        </div>
+      </div>
+
+      <div class="field-group single">
+        <div class="field">
+          <label>Anything else we should know?
+            <span class="hint">Challenges, fears, or specific requests</span>
+          </label>
+          <textarea name="anything_else" placeholder="e.g. I struggle with writing captions. I want to attract luxury clients..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="submit-area">
+      <button type="submit" class="submit-btn">Submit My Brand Brief</button>
+      <p class="submit-note">
+        Your information is 100% confidential.<br>
+        Nexora Systems will follow up within 24–48 hours.
+      </p>
+    </div>
+
+  </form>
+</div>
+
+<!-- FOOTER -->
+<div class="form-footer">
+  Powered by <span>Nexora Systems</span> · We Build. You Grow.
+</div>
+
+<!-- SUCCESS -->
+<div class="success-screen" id="successScreen">
+  <div class="success-glow">✦</div>
+  <h2>Brief Received</h2>
+  <p>Your brand brief has been submitted. Nexora Systems will begin building your visual identity and growth system shortly.</p>
+  <div class="sys-label">Nexora Systems · We Build. You Grow.</div>
+</div>
+
+<script>
+  function toggleCheck(el) {
+    const cb = el.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    el.classList.toggle('active', cb.checked);
+    updateProgress();
+  }
+
+  function selectRadio(el, name) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+      r.closest('.radio-item').classList.remove('active');
+    });
+    el.querySelector('input').checked = true;
+    el.classList.add('active');
+    updateProgress();
+  }
+
+  function handleUpload() {
+    const count = document.querySelectorAll('input[type="file"]').length;
+    const selected = Array.from(document.querySelectorAll('input[type="file"]')).filter(i => i.files && i.files.length > 0).length;
+    const status = document.getElementById('uploadStatus');
+    if (selected > 0) {
+      status.textContent = `${selected} photo${selected > 1 ? 's' : ''} selected ✓`;
+      status.style.color = 'var(--nx-signal)';
+    }
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const inputs = document.querySelectorAll('input[required], select[required]');
+    let filled = 0;
+    inputs.forEach(i => { if (i.value.trim()) filled++; });
+    const pct = Math.round((filled / inputs.length) * 100);
+    document.getElementById('progress').style.width = pct + '%';
+  }
+
+  document.querySelectorAll('input, select, textarea').forEach(el => {
+    el.addEventListener('input', updateProgress);
+  });
+
+  function handleSubmit(e) {
+    return true;
+  }
+</script>
+</body>
+</html>
